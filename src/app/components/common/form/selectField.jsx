@@ -3,6 +3,10 @@ import PropTypes from "prop-types";
 import TextField from "./textField";
 
 const SelectField = ({label, value, onChange, defaultOption, options, error}) => {
+
+    const handleChange = ({target}) => {
+        onChange({name: target.name, value: target.value})
+    }
     const getInputClasses = () => {
         return "form-select" + (error ? " is-invalid" : "")
     }
@@ -24,7 +28,7 @@ const SelectField = ({label, value, onChange, defaultOption, options, error}) =>
                 id="validationCustom04"
                 name="profession"
                 value={value}
-                onChange={onChange}
+                onChange={handleChange}
             >
                 <option disabled value="">
                     {defaultOption}
