@@ -7,15 +7,15 @@ import Login from "./app/layouts/login";
 
 function App() {
     return (
-        <>
+        <div>
             <NavBar />
             <Switch>
-                <Route exact path="/" component={Main} />
+                <Route path="/users/:userId?/:edit?" component={Users} />
                 <Route path="/login/:type?" component={Login} />
-                <Route path="/users/:userId?" component={Users} />
+                <Route exact path="/" component={Main} />
                 <Redirect to="/" />
             </Switch>
-        </>
+        </div>
     )
 }
 
