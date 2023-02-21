@@ -106,6 +106,7 @@ const RegisterForm = () => {
             <SelectField
                 label="Выберите свою профессию:"
                 defaultOption="Choose..."
+                name="professions"
                 onChange={handleChange}
                 options={professions}
                 error={errors.profession}
@@ -125,6 +126,7 @@ const RegisterForm = () => {
             <MultiSelectField
                 options={qualities}
                 onChange={handleChange}
+                defaultValue={data.qualities}
                 name="qualities"
                 label="Выберите ваши качества:"
             />
